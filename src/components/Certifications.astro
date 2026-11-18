@@ -1,0 +1,8 @@
+---
+const certificates = [
+  { issuer: 'NPTEL', name: 'Human Computer Interaction', detail: 'Elite + Silver', score: '91%', accent: 'violet' },
+  { issuer: 'TRAINING', name: 'JavaScript Training', detail: 'Course completion', score: '82.50%', accent: 'blue' },
+  { issuer: 'CYBERSECURITY', name: 'Introduction to Cybercrime', detail: 'Certification', score: '✓', accent: 'pink' },
+];
+---
+<section class="section section-soft" id="certifications"><div class="wrap"><div class="section-heading centered" data-reveal><p class="eyebrow">ALWAYS LEARNING</p><h2>Proof of <span class="gradient-text">progress.</span></h2><p class="section-subtitle">Courses and certifications that have shaped my learning journey.</p></div><div class="cert-grid">{certificates.map((cert) => <article class:list={['cert-card', 'glass-card', `cert-${cert.accent}`]} data-reveal><div class="cert-top"><span class="cert-seal">✦</span><span class="cert-score">{cert.score}</span></div><p class="eyebrow">{cert.issuer}</p><h3>{cert.name}</h3><p>{cert.detail}</p><span class="cert-link" aria-disabled="true">Certificate link coming soon <span>↗</span></span></article>)}</div></div></section>

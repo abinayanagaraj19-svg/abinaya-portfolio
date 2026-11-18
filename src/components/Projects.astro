@@ -1,0 +1,248 @@
+---
+const projects = [
+  {
+    number: '01',
+    name: 'PawMatch AI',
+    type: 'AI-POWERED PET ADOPTION',
+    stage: 'Project',
+    description:
+      'A pet adoption and rehoming marketplace designed to connect pets with loving homes through thoughtful technology.',
+    features: [
+      'Pet listing management',
+      'User authentication',
+      'Adoption applications',
+      'AI recommendations & care assistant',
+    ],
+    tech: ['React', 'Vite', 'Node.js', 'Express.js', 'MySQL', 'JWT', 'Gemini API'],
+    visual: 'paw',
+    github: 'https://github.com/abinayanagaraj19-svg/PawmatchAI',
+  },
+  {
+    number: '02',
+    name: 'Feeding Hands',
+    type: 'COMMUNITY FOOD DONATION',
+    stage: 'Built & on GitHub',
+    description:
+      'An NGO-related project organized in VS Code, tracked with Git, and pushed to GitHub.',
+    features: [
+      'Project files organized',
+      'Git initialized',
+      'Pushed to GitHub',
+    ],
+    tech: ['HTML', 'CSS', 'JavaScript'],
+    visual: 'hands',
+    github: 'https://github.com/abinayanagaraj19-svg/Feeding-Hands',
+  },
+  {
+    number: '03',
+    name: 'Connecto',
+    type: 'TRAVEL GUIDANCE',
+    stage: 'Project',
+    description:
+      'A travel guidance application that helps users discover accommodation, restaurants, ATMs, and travel-related services.',
+    features: [
+      'Accommodation discovery',
+      'Restaurant discovery',
+      'ATMs and travel services',
+    ],
+    tech: ['JavaScript'],
+    visual: 'connect',
+    github: 'https://github.com/abinayanagaraj19-svg/Connecto',
+  },
+  {
+    number: '04',
+    name: 'Cloud-Based AI Supply Chain Risk Prediction',
+    type: 'MINI PROJECT 1',
+    stage: 'Workflow established',
+    description:
+      'A proposed cloud-based system to predict potential supply-chain disruptions and recommend safer, more efficient delivery routes.',
+    features: [
+      'Low, medium & high risk levels',
+      'Delivery route optimization',
+      'Traffic & weather risk analysis',
+      'Distance, time & cost evaluation',
+    ],
+    tech: ['Technology stack not finalized'],
+    visual: 'supply',
+  },
+  {
+    number: '05',
+    name: 'Online Banking System',
+    type: 'SECURE PHP FORM VALIDATION',
+    stage: 'Initial code implemented',
+    description:
+      'An early online banking application demonstrating validation and safe processing of customer information. MySQL data storage is planned but not implemented yet.',
+    features: [
+      'Customer registration form',
+      'Name, email & phone validation',
+      'Account number validation',
+      'Password validation & input sanitization',
+    ],
+    tech: ['PHP', 'HTML', 'CSS', 'MySQL planned', 'XAMPP / Apache'],
+    visual: 'banking',
+  },
+  {
+    number: '06',
+    name: 'AI Interview Coach',
+    type: 'INTERVIEW PREPARATION',
+    stage: 'Development idea',
+    description:
+      'A planned AI-powered platform to help students prepare for technical interviews.',
+    features: [
+      'Interview session management',
+      'Create & delete sessions',
+      'Frontend and backend integration',
+      'AI-based interview assistance',
+    ],
+    tech: ['React planned', 'Spring Boot planned', 'MySQL planned'],
+    visual: 'interview',
+  },
+  {
+    number: '07',
+    name: 'Student Management System',
+    type: 'JAVA CONSOLE PRACTICE',
+    stage: 'Planned',
+    description:
+      'A planned Java console application for practicing student record management and object-oriented programming.',
+    features: [
+      'Add, view & search students',
+      'Update student records',
+      'Delete student records',
+      'Exception handling',
+    ],
+    tech: ['Java', 'OOP', 'ArrayList', 'HashMap'],
+    visual: 'student',
+  },
+];
+
+const icons = {
+  paw: '✳',
+  hands: '♡',
+  connect: '⌖',
+  supply: '↗',
+  banking: '▤',
+  interview: '✦',
+  student: '⌘',
+};
+---
+
+<section class="section section-soft" id="projects">
+  <div class="wrap">
+    <div class="section-heading" data-reveal>
+      <p class="eyebrow">OUR PROJECT PORTFOLIO</p>
+      <h2>Ideas, meet <span class="gradient-text">implementation.</span></h2>
+      <p class="section-subtitle">
+        Projects, early builds, and ideas exploring useful problems and technology.
+      </p>
+    </div>
+
+    <div class="projects-grid">
+      {
+        projects.map((project) => (
+          <article
+            class:list={['project-card', 'glass-card', project.featured && 'project-featured']}
+            data-reveal
+          >
+            <div class:list={['project-visual', `visual-${project.visual}`]}>
+              <div class="visual-orb"></div>
+              <div class="visual-mark">{icons[project.visual]}</div>
+              <span class="visual-label">{project.type}</span>
+              <span class="project-number">/{project.number}</span>
+            </div>
+
+            <div class="project-content">
+              <p class="eyebrow">{project.type}</p>
+              <span class="project-stage">{project.stage}</span>
+              <h3>{project.name}</h3>
+              <p class="project-description">{project.description}</p>
+
+              <ul class="feature-list">
+                {project.features.map((feature) => <li>{feature}</li>)}
+              </ul>
+
+              <div class="project-tech">
+                {project.tech.map((tech) => <span>{tech}</span>)}
+              </div>
+
+              {project.github && (
+                <div class="project-links">
+                  <a
+                    class="project-link"
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    View on GitHub <span>↗</span>
+                  </a>
+                </div>
+              )}
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .project-stage {
+    display: inline-block;
+    margin: 0 0 8px;
+    padding: 4px 8px;
+    border: 1px solid rgba(173, 132, 239, 0.22);
+    border-radius: 5px;
+    background: rgba(148, 115, 229, 0.09);
+    color: #c1a4f5;
+    font: 8px var(--font-mono);
+    letter-spacing: 0.04em;
+  }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #d1baff;
+    font-size: 10px;
+    transition: color 0.2s;
+  }
+
+  .project-link:hover {
+    color: #fff;
+  }
+
+  .project-link span {
+    font-size: 13px;
+  }
+
+  .visual-supply {
+    background: linear-gradient(135deg, #13251f, #142534 55%, #211b37);
+  }
+
+  .visual-banking {
+    background: linear-gradient(135deg, #202032, #152d38 55%, #241b35);
+  }
+
+  .visual-interview {
+    background: linear-gradient(135deg, #211b35, #182c3b 55%, #302039);
+  }
+
+  .visual-student {
+    background: linear-gradient(135deg, #2a2319, #202035 55%, #172b36);
+  }
+
+  .visual-supply .visual-orb {
+    background: linear-gradient(145deg, rgba(94, 221, 171, 0.27), rgba(73, 179, 229, 0.22), rgba(158, 117, 237, 0.22));
+  }
+
+  .visual-banking .visual-orb {
+    background: linear-gradient(145deg, rgba(94, 163, 255, 0.25), rgba(99, 217, 208, 0.2), rgba(158, 117, 237, 0.22));
+  }
+
+  .visual-interview .visual-orb {
+    background: linear-gradient(145deg, rgba(172, 112, 255, 0.28), rgba(79, 189, 225, 0.21), rgba(229, 103, 188, 0.23));
+  }
+
+  .visual-student .visual-orb {
+    background: linear-gradient(145deg, rgba(255, 198, 108, 0.23), rgba(126, 130, 238, 0.24), rgba(85, 196, 211, 0.2));
+  }
+</style>
